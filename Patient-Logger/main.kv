@@ -1,0 +1,490 @@
+#:import NoTransition kivy.uix.screenmanager.NoTransition
+
+ScreenManagement:
+    transition: NoTransition()
+    StartingScreen:
+    LogIn:
+    SignUp:
+    PatientList:
+    PatientPage:
+    New_Patient:
+    Data:
+
+<Label>:
+    font_size: 60
+    color: [0, 0, 0]
+    markup: True
+
+<TextInput>:
+    size_hint: .3, .07
+    multiline: False
+    font_size: 19
+    write_tab: False
+
+<Button>:
+    font_size: 16
+    background_color: 0.2, 0.5, 1
+    size_hint: 0.3, 0.1
+    color: 1, 1, 1
+
+<StartingScreen>:
+    name: "main"
+    canvas.before:
+        Color:
+            rgba: 1, 1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    FloatLayout:
+        Button:
+            id: DocB
+            text: '[b]Doctor[/b]'
+            pos_hint: {'x': .35, 'y': .4}
+            markup: True
+            on_press:
+                root.manager.current = 'login'
+                root.manager.TYPE_GLOBAL = 'Doctor'
+        Button:
+            id: MedB
+            text: '[b]Medical Assistant[/b]'
+            pos_hint: {'x': .35, 'y': .25}
+            markup: True
+            on_press:
+                root.manager.current = 'login'
+                root.manager.TYPE_GLOBAL = 'Medical Assistant'
+        Label:
+            text: 'Welcome'
+            pos_hint: {'x': 0, 'y': .3}
+        Label:
+            text: 'I am a....'
+            font_size: 45
+            pos_hint: {'x': 0, 'y': .15}
+
+<LogIn>:
+    name: "login"
+    user: username
+    pwd: password
+    type : root.manager.TYPE_GLOBAL
+    type2: root.manager.TYPE_GLOBAL2
+    authenticate : authenticate
+
+    canvas.before:
+        Color:
+            rgba: 1, 1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    FloatLayout:
+        Button:
+            id: LogB
+            text: '[b]Log In[/b]'
+            size_hint: .1, .1
+            pos_hint: {'x': .45, 'y': .25}
+            markup: True
+            on_press:
+                root.manager.current = root.verify_credentials()
+                root.manager.get_screen('first').patient_list()
+        Button:
+            id: SigB
+            text: '[b]Sign Up[/b]'
+            size_hint: .1, .1
+            pos_hint: {'x': .45, 'y': .15}
+            markup: True
+            on_press:
+                root.manager.current = 'signup'
+        Label:
+            text: '[b]Please sign in:[/b]'
+            font_size: 40
+            size_hint: 1, 1
+            pos_hint: {'x': 0, 'y': .3}
+        TextInput:
+            id: username
+            text: 'Enter username'
+            pos_hint: {'x': .35, 'y': .55}
+            on_text_validate: root.verify_credentials()
+            on_focus:
+                root.manager.TYPE_GLOBAL2 = 'username'
+                root.on_focus(self.focus)
+        TextInput:
+            id: password
+            text: 'Enter password'
+            pos_hint: {'x': .35, 'y': .45}
+            on_text_validate: root.verify_credentials()
+            on_focus:
+                root.manager.TYPE_GLOBAL2 = 'password'
+                root.on_focus(self.focus)
+        Label:
+            id:authenticate
+            text:""
+            font_size: 14
+            size_hint: 1, 1
+            color: 1, 0, 0
+            pos_hint: {'x': 0, 'y': -0.1}
+            markup: True
+        Label:
+            id:label
+            text:""
+            font_size: 10
+            color: 1, 0, 0
+            pos_hint: {'x': 0, 'y': -0.1}
+            markup: True
+
+<SignUp>:
+    user: Username
+    pwd: Password
+    type : root.manager.TYPE_GLOBAL
+    type2: root.manager.TYPE_GLOBAL2
+    authenticate2 : authenticate2
+
+    name: "signup"
+    canvas.before:
+        Color:
+            rgba: 1, 1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    FloatLayout:
+        Label:
+            text: 'Create New User'
+            pos_hint: {'x': 0, 'y': .35}
+        TextInput:
+            id: First Name
+            text: 'Enter First Name'
+            pos_hint: {'x': .35, 'y': .65}
+            on_focus:
+                root.manager.TYPE_GLOBAL2 = 'First Name'
+                root.on_focus(self.focus)
+        TextInput:
+            id: Last Name
+            text: 'Enter Last Name'
+            pos_hint: {'x': .35, 'y': .55}
+            on_focus:
+                root.manager.TYPE_GLOBAL2 = 'Last Name'
+                root.on_focus(self.focus)
+        TextInput:
+            id: Username
+            text: 'Enter Username'
+            pos_hint: {'x': .35, 'y': .45}
+            on_focus:
+                root.manager.TYPE_GLOBAL2 = 'Username'
+                root.on_focus(self.focus)
+        TextInput:
+            id: Password
+            text: 'Enter Password'
+            pos_hint: {'x': .35, 'y': .35}
+            on_focus:
+                root.manager.TYPE_GLOBAL2 = 'Password'
+                root.on_focus(self.focus)
+        TextInput:
+            id: type
+            text: root.manager.TYPE_GLOBAL
+            disabled: True
+            pos_hint: {'x': .35, 'y': .25}
+        Button:
+            id: SigB2
+            text: '[b]Sign Up[/b]'
+            size_hint: .1, .1
+            pos_hint: {'x': .45, 'y': .05}
+            markup: True
+            on_press:
+                root.verify_availability()
+        Label:
+            id:authenticate2
+            text:""
+            font_size: 14
+            size_hint: 1, 1
+            color: 1, 0, 0
+            pos_hint: {'x': 0, 'y': -.3}
+            markup: True
+
+<PatientList>:
+    test: storage
+    type : root.manager.TYPE_GLOBAL
+    name: "first"
+    canvas.before:
+        Color:
+            rgba: 1, 1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    FloatLayout:
+        orientation: 'vertical'
+        Button:
+            text: 'Log Out'
+            size_hint: 0.15, 0.075
+            pos_hint: {'x': 0.014, 'y': 0.9}
+            background_color: 1, 0, 0
+            markup: True
+            on_press:
+                root.manager.current = root.checkout()
+        Button:
+            text: 'New Patient'
+            size_hint: 0.15, 0.075
+            pos_hint: {'x': 0.8365, 'y': 0.9}
+            markup: True
+            background_color: 0, 1, 0
+            on_press:
+                root.manager.current = 'form'
+        Label:
+            text: 'Patient List'
+            size_hint: 0.1, 0.1
+            font_size: 25
+            pos_hint: {'center_x': 0.5, 'top': 1}
+        Label:
+            id:storage
+            pos_hint: {'x': 0, 'y': 0.2}
+            opacity: 0
+            text: ""
+        ScrollView:
+            pos_hint: {'x': 0, 'y': -0.1}
+            GridLayout:
+                id: grid
+                padding: 10, 10
+                spacing: 10, 10
+                size_hint_y: None
+                cols: 2
+                height: self.minimum_height
+                row_default_height: 150
+
+<PatientPage>:
+    name: "patientpage"
+    test: storage
+    patient: plabel
+    pdata: pdata
+    canvas.before:
+        Color:
+            rgba: 1, 1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    FloatLayout:
+        orientation: 'vertical'
+        Button:
+            text: 'Back'
+            size_hint: 0.15, 0.075
+            pos_hint: {'x': 0.014, 'y': 0.9}
+            markup: True
+            on_press:
+                root.manager.current = root.checkout()
+        Button:
+            id: pdata
+            text: 'Patient Data'
+            size_hint: 0.15, 0.075
+            pos_hint: {'x': 0.8365, 'y': 0.9}
+            markup: True
+            background_color: 0, 1, 0
+            on_press:
+                root.manager.current = 'data'
+        Label:
+            id:storage
+            pos_hint: {'x': 0, 'y': 0.2}
+            opacity: 0
+            text: ""
+        Label:
+            id: plabel
+            text: ""
+            size_hint: 0.1, 0.1
+            font_size: 25
+            pos_hint: {'center_x': 0.5, 'top': 1}
+        ScrollView:
+            pos_hint: {'x': 0, 'y': -0.1}
+            GridLayout:
+                id: grids
+                padding: 10, 10
+                spacing: 10, 10
+                size_hint_y: None
+                cols: 1
+                height: self.minimum_height
+                row_default_height: 150
+
+<New_Patient>:
+    type2: root.manager.TYPE_GLOBAL2
+    name: "form"
+    canvas.before:
+        Color:
+            rgba: 1, 1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    ScrollView:
+        size: self.size
+        do_scroll_x: False
+        GridLayout:
+            size_hint: 1, None
+            rows: 17
+            height: self.minimum_height
+            padding: 150, 0
+            spacing: 0, 25
+            row_force_default: True
+            row_default_height: 40
+
+            Label:
+                text: "[b]New Patient Form[/b]"
+                font_size: 35
+
+            Label:
+                text: "[b]Personal Information[/b]"
+                font_size: 25
+
+            TextInput:
+                id: First name
+                text: "First name"
+                font_size: 25
+                on_focus:
+                    root.manager.TYPE_GLOBAL2 = 'First name'
+                    root.on_focus(self.focus)
+
+            TextInput:
+                id: Middle name
+                text: "Middle name"
+                font_size: 25
+                on_focus:
+                    root.manager.TYPE_GLOBAL2 = 'Middle name'
+                    root.on_focus(self.focus)
+
+            TextInput:
+                id: Last name
+                text: "Last name"
+                font_size: 25
+                on_focus:
+                    root.manager.TYPE_GLOBAL2 = 'Last name'
+                    root.on_focus(self.focus)
+            GridLayout:
+                size_hint: 1, None
+                rows: 1
+                cols: 3
+                height: self.minimum_height
+                row_force_default: True
+                row_force_default: True
+                row_default_height: 40
+                TextInput:
+                    id: Month
+                    text: "Month"
+                    input_filter: 'int'
+                    font_size: 25
+                    on_focus:
+                        root.manager.TYPE_GLOBAL2 = 'Month'
+                        root.on_focus(self.focus)
+                TextInput:
+                    id: Day
+                    text: "Day"
+                    input_filter: 'int'
+                    font_size: 25
+                    on_focus:
+                        root.manager.TYPE_GLOBAL2 = 'Day'
+                        root.on_focus(self.focus)
+                TextInput:
+                    id: Year
+                    text: "Year"
+                    input_filter: 'int'
+                    font_size: 25
+                    on_focus:
+                        root.manager.TYPE_GLOBAL2 = 'Year'
+                        root.on_focus(self.focus)
+
+            TextInput:
+                id: Gender
+                text: "Gender"
+                font_size: 25
+                on_focus:
+                    root.manager.TYPE_GLOBAL2 = 'Gender'
+                    root.on_focus(self.focus)
+
+            TextInput:
+                id: Race/Ethnicity
+                text: "Race/Ethnicity"
+                font_size: 25
+                on_focus:
+                    root.manager.TYPE_GLOBAL2 = 'Race/Ethnicity'
+                    root.on_focus(self.focus)
+
+            Label:
+                text: "[b]Contact Information[/b]"
+                font_size: 25
+
+            TextInput:
+                id: Phone Number
+                text: "Phone Number"
+                input_filter: 'int'
+                font_size: 25
+                on_focus:
+                    root.manager.TYPE_GLOBAL2 = 'Phone Number'
+                    root.on_focus(self.focus)
+
+            TextInput:
+                id: Email Address
+                text: "Email Address"
+                font_size: 25
+                on_focus:
+                    root.manager.TYPE_GLOBAL2 = 'Email Address'
+                    root.on_focus(self.focus)
+
+            TextInput:
+                id: Street Address
+                text: "Street Address"
+                font_size: 25
+                on_focus:
+                    root.manager.TYPE_GLOBAL2 = 'Street Address'
+                    root.on_focus(self.focus)
+
+            Label:
+                text: "[b]Medical Information[/b]"
+                font_size: 25
+
+            TextInput:
+                id: Social Security
+                font_size: 25
+                text: "Social Security"
+                input_filter: 'int'
+                on_focus:
+                    root.manager.TYPE_GLOBAL2 = 'Social Security'
+                    root.on_focus(self.focus)
+
+            TextInput:
+                id: Medical Insurance Company
+                font_size: 25
+                text: "Medical Insurance Company"
+                on_focus:
+                    root.manager.TYPE_GLOBAL2 = 'Medical Insurance Company'
+                    root.on_focus(self.focus)
+
+            Button:
+                text: '[b]Sign Up[/b]'
+                markup: True
+                on_press:
+                    root.Add_Patient()
+
+<Data>:
+    name: "data"
+    canvas.before:
+        Color:
+            rgba: 1, 1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    BoxLayout:
+        orientation: 'vertical'
+        Button:
+            text: 'Back'
+            size_hint: 0.15, 0.075
+            pos_hint: {'x': 0.01, 'y': 1}
+            markup: True
+            on_press:
+                root.manager.current = 'patientpage'
+        Label:
+            text: 'Patient Data'
+            size_hint: 0.1, 0.1
+            font_size: 25
+            pos_hint: {'center_x': 0.5, 'top': 1}
+        ScrollView:
+            size: self.size
+            do_scroll_x: False
+            GridLayout:
+                id: grid
+                padding: 10, 10
+                size_hint_y: None
+                cols: 1
+                height: self.minimum_height
+                row_default_height: 400

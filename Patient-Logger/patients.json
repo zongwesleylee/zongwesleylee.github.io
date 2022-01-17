@@ -1,0 +1,326 @@
+{
+    "Doctor": [
+        {
+            "Doc_FName": "Shrithik",
+            "Doc_LName": "Sareddy",
+            "Username": "s",
+            "Password": "s"
+        },
+        {
+            "Doc_FName": "i",
+            "Doc_LName": "s",
+            "Username": "i",
+            "Password": "a"
+        },
+        {
+            "Doc_FName": "s",
+            "Doc_LName": "s",
+            "Username": "ss",
+            "Password": "ss"
+        },
+        {
+            "Doc_FName": "Enter First Name",
+            "Doc_LName": "Enter Last Name",
+            "Username": "Enter Username",
+            "Password": "Enter Password"
+        },
+        {
+            "Doc_FName": "J",
+            "Doc_LName": "Manga",
+            "Username": "jmanga",
+            "Password": "qwert"
+        }
+    ],
+    "Medical Assistant": [
+        {
+            "Med_FName": "Shrithik",
+            "Med_LName": "Sareddy",
+            "Username": "ss",
+            "Password": "ss"
+        },
+        {
+            "Med_FName": "Sarada",
+            "Med_LName": "Sareddy",
+            "Username": "sss",
+            "Password": "sss"
+        },
+        {
+            "Med_FName": "Zong",
+            "Med_LName": "Lee",
+            "Username": "zzz",
+            "Password": "zzz"
+        }
+    ],
+    "Doctor-to-Patient": [
+        {
+            "Doctor": "s s",
+            "Patient": "Shrithik Reddy Sareddy"
+        },
+        {
+            "Doctor": "s s",
+            "Patient": "Shashank Ambati"
+        },
+        {
+            "Doctor": "s s",
+            "Patient": "Sudhakara Reddy Sareddy"
+        },
+        {
+            "Doctor": "s s",
+            "Patient": "Sarada Sareddy"
+        },
+        {
+            "Doctor": "i s",
+            "Patient": "karen meza"
+        },
+        {
+            "Doctor": "i s",
+            "Patient": "brenda miranda"
+        },
+        {
+            "Doctor": "i s",
+            "Patient": "cindy le nhu"
+        },
+        {
+            "Doctor": "i s",
+            "Patient": "bariul chowdry"
+        },
+        {
+            "Doctor": "i s",
+            "Patient": "jackie alvarez"
+        },
+        {
+            "Doctor": "i s",
+            "Patient": "maesa ocampo"
+        },
+        {
+            "Doctor": "i s",
+            "Patient": "gidalti zohet esqueda"
+        },
+        {
+            "Doctor": "s s",
+            "Patient": "dana tran"
+        },
+        {
+            "Doctor": "i s",
+            "Patient": "teddy bear kwon"
+        },
+        {
+            "Doctor": "s s",
+            "Patient": "nick stevens"
+        },
+        {
+            "Doctor": "J Manga",
+            "Patient": "Barry Ellis"
+        }
+    ],
+    "Patient": [
+        {
+            "FName": "Shrithik",
+            "MName": "Reddy",
+            "LName": "Sareddy",
+            "Birth Year": "11/04/1998",
+            "Gender": "Male",
+            "Race": "Asian",
+            "PNumber": "6192753021",
+            "EAddress": "shrithik1@gmail.com",
+            "SAddress": "2818 Cozumel Cir.",
+            "SNumber": "123456789",
+            "MCompany": "Kaiser Permanente"
+        },
+        {
+            "FName": "S",
+            "MName": "s",
+            "LName": "S",
+            "Birth Year": "1/1/1",
+            "Gender": "s",
+            "Race": "s",
+            "PNumber": "1",
+            "EAddress": "s",
+            "SAddress": "s",
+            "SNumber": "1",
+            "MCompany": "s"
+        },
+        {
+            "FName": "Shashank",
+            "MName": null,
+            "LName": "Ambati",
+            "Birth Year": "2/2/2",
+            "Gender": "M",
+            "Race": "F",
+            "PNumber": "1",
+            "EAddress": "S",
+            "SAddress": "S",
+            "SNumber": "1",
+            "MCompany": "S"
+        },
+        {
+            "FName": "Sudhakara",
+            "MName": "Reddy",
+            "LName": "Sareddy",
+            "Birth Year": "1/2/3",
+            "Gender": "M",
+            "Race": "M",
+            "PNumber": "1",
+            "EAddress": "S",
+            "SAddress": "S",
+            "SNumber": "1",
+            "MCompany": "s"
+        },
+        {
+            "FName": "Sarada",
+            "MName": null,
+            "LName": "Sareddy",
+            "Birth Year": "1/1/1",
+            "Gender": "F",
+            "Race": "A",
+            "PNumber": "1",
+            "EAddress": "S",
+            "SAddress": "S",
+            "SNumber": "1",
+            "MCompany": "S"
+        },
+        {
+            "FName": "karen",
+            "MName": null,
+            "LName": "meza",
+            "Birth Year": "Month/Day/Year",
+            "Gender": "Gender",
+            "Race": "Race/Ethnicity",
+            "PNumber": "Phone Number",
+            "EAddress": "Email Address",
+            "SAddress": "Street Address",
+            "SNumber": "Social Security",
+            "MCompany": "Medical Insurance Company"
+        },
+        {
+            "FName": "brenda",
+            "MName": null,
+            "LName": "miranda",
+            "Birth Year": "Month/Day/Year",
+            "Gender": "Gender",
+            "Race": "Race/Ethnicity",
+            "PNumber": "Phone Number",
+            "EAddress": "Email Address",
+            "SAddress": "Street Address",
+            "SNumber": "Social Security",
+            "MCompany": "Medical Insurance Company"
+        },
+        {
+            "FName": "cindy",
+            "MName": "le",
+            "LName": "nhu",
+            "Birth Year": "Month/Day/Year",
+            "Gender": "Gender",
+            "Race": "Race/Ethnicity",
+            "PNumber": "Phone Number",
+            "EAddress": "Email Address",
+            "SAddress": "Street Address",
+            "SNumber": "Social Security",
+            "MCompany": "Medical Insurance Company"
+        },
+        {
+            "FName": "bariul",
+            "MName": null,
+            "LName": "chowdry",
+            "Birth Year": "Month/Day/Year",
+            "Gender": "Gender",
+            "Race": "Race/Ethnicity",
+            "PNumber": "Phone Number",
+            "EAddress": "Email Address",
+            "SAddress": "Street Address",
+            "SNumber": "Social Security",
+            "MCompany": "Medical Insurance Company"
+        },
+        {
+            "FName": "jackie",
+            "MName": null,
+            "LName": "alvarez",
+            "Birth Year": "Month/Day/Year",
+            "Gender": "Gender",
+            "Race": "Race/Ethnicity",
+            "PNumber": "Phone Number",
+            "EAddress": "Email Address",
+            "SAddress": "Street Address",
+            "SNumber": "Social Security",
+            "MCompany": "Medical Insurance Company"
+        },
+        {
+            "FName": "maesa",
+            "MName": null,
+            "LName": "ocampo",
+            "Birth Year": "Month/Day/Year",
+            "Gender": "Gender",
+            "Race": "Race/Ethnicity",
+            "PNumber": "Phone Number",
+            "EAddress": "Email Address",
+            "SAddress": "Street Address",
+            "SNumber": "Social Security",
+            "MCompany": "Medical Insurance Company"
+        },
+        {
+            "FName": "gidalti",
+            "MName": "zohet",
+            "LName": "esqueda",
+            "Birth Year": "Month/Day/Year",
+            "Gender": "Gender",
+            "Race": "Race/Ethnicity",
+            "PNumber": "Phone Number",
+            "EAddress": "Email Address",
+            "SAddress": "Street Address",
+            "SNumber": "Social Security",
+            "MCompany": "Medical Insurance Company"
+        },
+        {
+            "FName": "dana",
+            "MName": null,
+            "LName": "tran",
+            "Birth Year": "Month/Day/Year",
+            "Gender": "Gender",
+            "Race": "Race/Ethnicity",
+            "PNumber": "Phone Number",
+            "EAddress": "Email Address",
+            "SAddress": "Street Address",
+            "SNumber": "Social Security",
+            "MCompany": "Medical Insurance Company"
+        },
+        {
+            "FName": "teddy",
+            "MName": "bear",
+            "LName": "kwon",
+            "Birth Year": "Month/Day/Year",
+            "Gender": "Gender",
+            "Race": "Race/Ethnicity",
+            "PNumber": "Phone Number",
+            "EAddress": "Email Address",
+            "SAddress": "Street Address",
+            "SNumber": "Social Security",
+            "MCompany": "Medical Insurance Company"
+        },
+        {
+            "FName": "nick",
+            "MName": null,
+            "LName": "stevens",
+            "Birth Year": "Month/Day/Year",
+            "Gender": "Gender",
+            "Race": "Race/Ethnicity",
+            "PNumber": "Phone Number",
+            "EAddress": "Email Address",
+            "SAddress": "Street Address",
+            "SNumber": "Social Security",
+            "MCompany": "Medical Insurance Company"
+        },
+        {
+            "FName": "Barry",
+            "MName": null,
+            "LName": "Ellis",
+            "Birth Year": "7/23/1987",
+            "Gender": "Male",
+            "Race": "African Spaniard",
+            "PNumber": "2095551234",
+            "EAddress": "bellis723@fakemail.com",
+            "SAddress": "123 Fake St.",
+            "SNumber": "555055555",
+            "MCompany": "Hospital for Fakes"
+        }
+    ]
+}
