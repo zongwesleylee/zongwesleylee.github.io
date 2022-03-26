@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>ZWL - AES</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Zong W Lee</a>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<h1>Encryption Algorithm for AES</h1>
+									<p>Implemented encryption algorithm of the Advanced Encryption System (AES) for 128 bit key, assuming the plaintext input message is always the length of 128 bits.</p>
+								</header>
+								<div class="image main"><img src="images/shift.png" alt="" /></div>
+								<p>The goal was to Implement encryption algorithm with plaintext input message of 128 bits with two test cases. The implementation contains nine main rounds with one final round. In each main round, it performs four operations while the final round only performs three. The operations are stated in order byte substitution, shift rows, mix columns, and add round key. The final round skips the mix columns operation.</p>
+								<ul>
+									<li>The first step to my implementation is reading both plaintext and key files into an array. The plaintext array is read into a multidimensional array where x (left and right) and y (up and down) are used to make a 4x4 grid. The values are in increasing order from column to column. Before the main rounds begin, it performs add round key.</li>
+									<li>Byte Subsitution is implemented to utilize S-box to replace every byte in the message. I implemented it in a way that replaces the byte by its value and not indexed by row and column.</li>
+									<li>Shift Rows is implemented to shift rows of the matrix left, increasing as it goes down the rows. It uses a temporary array to hold the shifted values which replaces the values in matrix.</li>
+									<li>Mixed Columns is implemented to replace matrix values by using matrix multiplication. The matrix is multiplied by a constant matrix into a temporary matrix. The values of the temporary matrix replaces the original matrix. </li>
+									<li>Add Round Key is implemented to perform exclusive or operations between the values in the matrix and key array.</li>
+									<li>The last step to my implementation is writing the values in the matrix a file. This is done by reading the values in the matrix into an array which is written into a file.</li>
+								</ul>
+								<p>The same key is used everytime it performs the exclusive or operation each round. Every operation works when tested individually, however, when tested together and in multiple rounds there are errors. I was unable to find out if my encryption as AES is successful as it was only encrypted so I couldn’t decrypt the ciphertext to see if the values were correct. I noticed I was getting more values in my ciphertext that were more than 128 bits. Somewhere between the rounds, my matrix ends up holding more values than 16.</p>
+								<ul class="actions special">
+									<li><a href="https://github.com/zongwesleylee/Encryption-Algorithm-for-AES" target="_blank" rel="noopener noreferrer" class="button icon brands fa-github">Code</a></li>
+									<li><a href="index.html#aes" class="button">Return</a></li>
+								</ul>
+							</section>
+
+					</div>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

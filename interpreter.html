@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>ZWL - Interpreter</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Zong W Lee</a>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<h1>MIPS Interpreter</h1>
+									<p>Implemented an instruction interpreter for a subset of MIPS code that will fetch, disassemble, decode and execute MIPS machine instructions to simulate each state in computation.</p>
+								</header>
+
+								<div class="row gtr-50 gtr-uniform">
+									<div class="col-6"><span class="image fit"><img src="images/mips1.png" alt="" /></span></div>
+									<div class="col-6"><span class="image fit"><img src="images/mips2.png" alt="" /></span></div>
+								</div>
+
+								<p></p>
+								<p>In this project, I create what is effectively a miniature version of MARS (MIPS Assembler and Runtime Simulator). The difference is MARS takes in assembly language source files and not .dump files.</p>
+								<p>Working over skeleton code, I complete the program by adding code to computer.c and simulate machine code versions of different MIPS machine instructions. In the skeleton code (framework code), it reads the machine code into memory, initializes the stack pointer, program counter, and all other registers. Then, it provides simulated data memory and stores instructions together with data in the same memory array. It sets flags that govern how the program interacts with the user and enters a loop that repeatedly fetches and executes instructions which prints information.</p>
+								<p>In the five processing stages of the MIPS architecture, I implement Decode, Execute, Mem, and RegWrite. Decode gives an instruction and performs register reads. Execute performs any ALU computation associated with the instruction and returns the value. Mem performs memory reads or writes related with the instruction. RegWrite performs any register writes that are needed. In my test code, I attempted to utilize mixes of all operational tasks to stack the fitting qualities into the input registers. The objective was to ensure that by utilizing the entirety of the directions with the right qualities, I could control the qualities to wind up letting out a similar outcome as the example test code did and in the correct format. I expected to ensure my code would work, so I included the instructions into the code to test the remainder of them.</p>
+								<ul class="actions special">
+									<li><a href="https://github.com/zongwesleylee/MIPS-Interpreter" target="_blank" rel="noopener noreferrer" class="button icon brands fa-github">Code</a></li>
+									<li><a href="index.html#interpreter" class="button">Return</a></li>
+								</ul>
+							</section>
+
+					</div>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
